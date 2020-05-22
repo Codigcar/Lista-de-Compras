@@ -10,6 +10,9 @@
     <div id="lista-compras">
         <h1>{{ header ? header : 'Bienvenido' }}</h1>
         <h1>{{ header.toLocaleUpperCase() }} </h1>
+        <ul>
+            <li v-for="i in utiles">{{ i }}</li>
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -17,7 +20,12 @@
         new Vue({
             el:'#lista-compras',
             data:{
-                header: 'Listado de Utiles'
+                header: 'Listado de Utiles',
+                utiles: [
+                    '10 cuadernos',
+                    '15 lapices',
+                    '5 cajas de colores'
+                ]
             }
         });
     </script>
