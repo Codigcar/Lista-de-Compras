@@ -18,7 +18,7 @@
             <button class="btn btn-primary" :disabled="newUtil.length === 0" @click="guardarElemento()">Guardar</button>
         </div>
         <ul>
-            <li v-for="i in utiles">{{ i }}</li>
+            <li v-for="i in utiles">{{ i.util }}</li>
         </ul>
         <p v-if="utiles.length === 0">No existen elementos</p>
     </div>
@@ -31,7 +31,15 @@ var app = new Vue({
                 estado: 'default',
                 header: 'Listado de Utiles',
                 newUtil:'',
-                utiles: [
+                utiles: [{
+                    util:'10 cuadernos'
+                },
+                {
+                    util:'15 lapices'
+                },
+                {
+                    util:'5 colores'
+                }
                 //    '10 cuadernos',
                 //    '15 lapices',
                 //    '5 cajas de colores'
@@ -39,7 +47,10 @@ var app = new Vue({
             },
             methods:{
                 guardarElemento:function(){
-                    this.utiles.push(this.newUtil);
+                    this.utiles.push({
+                        util: this.newUtil
+                    });
+                    //this.utiles.push(this.newUtil);
                     this.newUtil='';
                 },
                 cambiarEstado:function(newEstado){
