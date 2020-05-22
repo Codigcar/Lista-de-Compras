@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div id="lista-compras">
+        <h1>{{ header }}</h1>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        new Vue({
+            el:'#lista-compras',
+            data:{
+                header:'Listado de Utiles'
+            }
+        });
+    </script>
 </body>
 </html>
