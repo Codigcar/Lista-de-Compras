@@ -35,6 +35,7 @@ var app = new Vue({
             methods:{
                 guardarElemento:function(){
                     this.utiles.push(this.newUtil);
+                    this.newUtil='';
                 }
             }
         });
